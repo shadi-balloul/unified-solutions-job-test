@@ -24,13 +24,13 @@ router.get('/get-todo',   function(req, res){
     if(!(itemname)){
         return res.json({success: false, msg: "You should input 'itemname' of the todd item"});
     } else {    
-        Todo.findOne({itemname: itemname}, function(err, item){
+        Todo.findOne({itemname: itemname, username: username}, function(err, item){
             if(err) {
                 console.log(err.message);
                 return res.status(500).json({success: "false", cause: "dbserver-err", msg:"Internal Database Server Error during search item"});
             }
             if(!item){
-                return res.status(422).json({success: false, msg: "There is no todo item with itemname: " + itemname});   
+                return res.status(422).json({success: false, msg: "There is no todo item with itemname: " + itemname + " for the user: " + username});   
             }
             else{                   
                     return res.json({success: true,  todo: item });
@@ -95,7 +95,7 @@ router.post('/update',   function(req, res){
     if(!(category)){
         return res.json({success: false, msg: "You should inter the 'category' field of the todo item you want to update "});
     }
-    Todo.findOneAndUpdate({itemname: itemname}, {category: category}, function(err, item){
+    Todo.findOneAndUpdate({itemname: itemname, username: username}, {category: category}, function(err, item){
         if(err) {
             console.log(err.message);
             return res.status(500).json({success: "false", cause: "dbserver-err", msg:"Internal Database Server Error during search item"});
@@ -137,6 +137,31 @@ router.post('/delete',   function(req, res){
         
     
 });
+
+router.get('/get-all-todos',   function(req, res){
+    let username = req.body.username;
+    if(!username){
+        return res.status(403).json({success: false, msg: "You should be a logged user"});
+    }
+        
+    Todo.find({username: username}, function(err, items){
+        if(err) {
+            console.log(err.message);
+            return res.status(500).json({success: "false", cause: "dbserver-err", msg:"Internal Database Server Error during search item"});
+        }
+        if(items.length == 0){
+            return res.json({success: true, msg: "There is no todos for user " + username});   
+        }
+        else{                   
+                return res.json({success: true,  todos: items });
+        }
+            
+        
+    });
+    
+    
+});
+
 
 
 

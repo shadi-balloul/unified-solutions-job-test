@@ -175,5 +175,38 @@ router.post('/delete', actions.getUser,  function(req, res){
     });
 });
 
+router.get('/get-all-todos', actions.getUser,  function(req, res){
+    let username = res.locals.username;
+    if(!username){
+        return res.status(403).json({success: false, msg: "You should be a logged user"});
+    }  
+    User.findOne({username: username}, function(err, user){
+        if(err) {
+            console.log(err.message);
+            return res.status(500).json({success: "false", cause: "dbserver-err", msg:"Internal Database Server Error during search user"});
+        }
+        if(!user){
+            return res.status(403).json({success: false, msg: "The user doesn't exist"});   
+        }
+        else{
+            Todo.find({username: username}, function(err, items){
+                if(err) {
+                    console.log(err.message);
+                    return res.status(500).json({success: "false", cause: "dbserver-err", msg:"Internal Database Server Error during search item"});
+                }
+                if(items.length == 0){
+                    return res.json({success: true, msg: "There is no todos for user " + username});   
+                }
+                else{                   
+                        return res.json({success: true,  todos: items });
+                }
+                    
+                
+            });
+        }
+    });
+});
+
+
 
 module.exports = router;
