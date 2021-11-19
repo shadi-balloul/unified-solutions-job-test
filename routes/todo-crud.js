@@ -9,27 +9,35 @@ const actions = require('../methods/actions');
 
 var router = express.Router();
 
+/*
+This file contains the CRUD todo routes without authentication
+*/
 
-
-router.get('/',  function(req, res) {
-    return res.json({"success": "true"});
-});
-
+/*
+   Get one todo by username and itemname values,
+   we need the both values beacuse there may be users have items with the same itemname value
+   The identity of the todo is specified by two fields "itemname" and "username"
+*/
 router.get('/get-todo',   function(req, res){
+    // Get the fields from the body
     let username = req.body.username;
     let itemname = req.body.itemname;
+    //check if the username is entered
     if(!username){
         return res.status(403).json({success: false, msg: "You should be a logged user"});
     }
+    //check if the itemname is entered
     if(!(itemname)){
         return res.json({success: false, msg: "You should input 'itemname' of the todd item"});
     } else {    
         Todo.findOne({itemname: itemname}, function(err, item){
             if(err) {
+                // In case a database error is happened
                 console.log(err.message);
                 return res.status(500).json({success: "false", cause: "dbserver-err", msg:"Internal Database Server Error during search item"});
             }
             if(!item){
+                // The todo item is not exist
                 return res.status(422).json({success: false, msg: "There is no todo item with itemname: " + itemname});   
             }
             else{                   
