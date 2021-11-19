@@ -50,6 +50,12 @@ router.get('/get-todo',   function(req, res){
     
 });
 
+/*
+    Add todo for specific user
+    Three fields are recieved in the body of the query
+    username, itemname, category
+*/
+
 router.post('/add',  function(req, res){
     let username = req.body.username;
     let itemname = req.body.itemname;
@@ -89,6 +95,12 @@ router.post('/add',  function(req, res){
         
     
 });
+
+/*
+    Update a specific todo for specific user
+    Three fields are recivede in the body of the request
+    username, itemname, category
+*/
 
 router.post('/update',   function(req, res){
     let username = req.body.username;
