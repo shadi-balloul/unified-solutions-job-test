@@ -1,0 +1,1010 @@
+{
+	"info": {
+		"_postman_id": "4b2bb767-9154-47cc-9d0e-68ec48853594",
+		"name": "postman-collection-without-getAllTodo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "shadi",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Aa123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register New User (Example)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "shadi",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Aa123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b-TnOSIXzEqEdw3a0qT8C97/WyYvw\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Nov 2021 03:57:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"msg\": \"Successfully saved\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "shadi",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Aa123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "shadi",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "Aa123456",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "shadi",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Aa123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "shadi",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "Aa123456",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "136"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"88-6lOAxPnDS7bhFF9NgL3UPuoKpVE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Nov 2021 04:11:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"jtoken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNoYWRpIn0.Mh3h1XG3J_6gymCgwIkEYZJ2O1h098L9-N-bravhHZE\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add With Authentication",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNoYWRpIn0.Mh3h1XG3J_6gymCgwIkEYZJ2O1h098L9-N-bravhHZE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "shadi",
+							"type": "text"
+						},
+						{
+							"key": "itemname",
+							"value": "shadi item 2",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "category-a",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"add"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add With Authentication (Example)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "shadi",
+									"type": "text"
+								},
+								{
+									"key": "itemname",
+									"value": "shadi item 2",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "category-a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"37-A8YRjL1t2whP79kmcGCGtUxFhLk\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Nov 2021 05:09:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"msg\": \"The item is saved successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update With Authentication",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNoYWRpIn0.Mh3h1XG3J_6gymCgwIkEYZJ2O1h098L9-N-bravhHZE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "itemname",
+							"value": "shadi item 2",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "category-b",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"update"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update with authentication (Example)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "itemname",
+									"value": "shadi item 2",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "category-c",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"update"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39-hUMzdAxRxv+TKurEEqallXXDGhI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Nov 2021 07:45:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"msg\": \"The item is updated successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get One Todo With Authentication",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNoYWRpIn0.Mh3h1XG3J_6gymCgwIkEYZJ2O1h098L9-N-bravhHZE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "itemname",
+							"value": "shadi item ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/get-todo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"get-todo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get One Todo (Example)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "itemname",
+									"value": "shadi item ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/get-todo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"get-todo"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4a-GIfklrqosBHKCm34wTAlFMxDeMQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Nov 2021 06:01:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"msg\": \"There is no todo item with itemname: shadi item \"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "Ahmad",
+							"type": "text"
+						},
+						{
+							"key": "itemname",
+							"value": "ahmad-item-1",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "category-a",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"add"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add (Example)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Ahmad",
+									"type": "text"
+								},
+								{
+									"key": "itemname",
+									"value": "ahmad-item-1",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "category-a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3c-mFaPLvPaZRuuEtXlOmJqpjIcCfA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Nov 2021 08:02:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"msg\": \"The todo item is saved successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "Ahmad",
+							"type": "text"
+						},
+						{
+							"key": "itemname",
+							"value": "ahmad-item-1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"delete"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete (Example)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Ahmad",
+									"type": "text"
+								},
+								{
+									"key": "itemname",
+									"value": "ahmad-item-1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"delete"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "93"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5d-33fUvV5+sCRyQK/hiRbR+Ze3pMA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Nov 2021 07:40:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"msg\": \"There is no todo item with itemname: ahmad-item-1for the user Ahmad\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete with Authentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/auth/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "Ahmad",
+							"type": "text"
+						},
+						{
+							"key": "itemname",
+							"value": "ahmad-item-1",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "category-b",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"update"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update (Example)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Ahmad",
+									"type": "text"
+								},
+								{
+									"key": "itemname",
+									"value": "ahmad-item-1",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "category-b",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"update"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39-hUMzdAxRxv+TKurEEqallXXDGhI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Nov 2021 08:08:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"msg\": \"The item is updated successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get One Todo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "Ahmad",
+							"type": "text"
+						},
+						{
+							"key": "itemname",
+							"value": "ahmad-item-1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/get-todo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"get-todo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get One Todo (Example)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Ahmad",
+									"type": "text"
+								},
+								{
+									"key": "itemname",
+									"value": "ahmad-item-1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/get-todo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"get-todo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "169"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a9-1Ch8/EY8LU4arXWfYeCCY5bczuw\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Nov 2021 08:11:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"todo\": {\n        \"_id\": \"61975a24fe35e83960efbb2d\",\n        \"username\": \"Ahmad\",\n        \"itemname\": \"ahmad-item-1\",\n        \"category\": \"category-b\",\n        \"date\": \"2021-11-19T08:02:44.350Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		}
+	]
+}

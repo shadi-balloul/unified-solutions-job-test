@@ -1,0 +1,23 @@
+{
+  "name": "unify-solutions-test",
+  "version": "1.0.0",
+  "description": "This a job test for Shadi BALLOUl",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node index",
+    "dev": "cross-env NODE_ENV=development nodemon index"
+  },
+  "author": "Shadi BALLOUL",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jwt-simple": "^0.5.6",
+    "mongo-sanitize": "^1.1.0",
+    "mongoose": "^5.12.13  ",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0"
+  }
+}
